@@ -146,16 +146,15 @@ if __name__ == "__main__":
 
 	# compare numerical methods to each other
 	fig = plt.figure(figsize=(10, 6))
-	plt.plot([1,2,3,4], 1 + (simp-gaus[:4]), ".-", label="Simpson - Gauss")
-	plt.plot([1,2,3,4], 1 + (simp-analytic), ".-", label="Simpson - Analytic")
-	plt.plot([1,2,3,4, 5], 1 + (gaus-analytic), ".-", label="Gauss - Analytic")
+	plt.plot([1,2,3,4], (simp-gaus[:4]), ".-", label="Simpson - Gauss")
+	plt.plot([1,2,3,4], (simp-analytic), ".-", label="Simpson - Analytic")
+	plt.plot([1,2,3,4, 5], (gaus-analytic), ".-", label="Gauss - Analytic")
 	plt.legend()
-	plt.yscale("log")
 	plt.xlabel("Number of Sub-Intervals")
 	plt.ylabel("Error")
 	plt.title("Error Comparison of the Methods")
 	plt.show()
-	fig.savefig("comparison.jpg", dpi=180)
+	fig.savefig("analytic_numerical_comparison.jpg", dpi=180)
 
 	# DISCUSSION:
 	# For n = 1, the S-G difference is not a good tracer of the actual errors S-A and G-A. For n = 2 through 4,5, the estimates all converge.
