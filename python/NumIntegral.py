@@ -3,7 +3,6 @@ import sys
 import matplotlib.pyplot as plt
 
 sys.path.append(".")
-
 # Integrate under the curve e^x from 0 to 1 with either of two integration methods:
 # Simpson's Rule or Gauss-Legendre quadrature with varying numbers of sub-intervals (default 2)
 # the analytic solution will be e - 1
