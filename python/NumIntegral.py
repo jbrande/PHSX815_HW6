@@ -3,7 +3,6 @@ import sys
 import matplotlib.pyplot as plt
 
 sys.path.append(".")
-from python.Random import Random
 
 # Integrate under the curve e^x from 0 to 1 with either of two integration methods:
 # Simpson's Rule or Gauss-Legendre quadrature with varying numbers of sub-intervals (default 2)
@@ -117,6 +116,7 @@ if __name__ == "__main__":
 	print("Analytic-Numerical: ", analytic-integral)
 
 
+
 	# code to do some systematic comparisons
 	
 	simp = np.zeros(4)
@@ -152,6 +152,9 @@ if __name__ == "__main__":
 	plt.plot([1,2,3,4, 5], 1 + (gaus-analytic), ".-", label="Gauss - Analytic")
 	plt.legend()
 	plt.yscale("log")
+	plt.xlabel("Number of Sub-Intervals")
+	plt.ylabel("Error")
+	plt.title("Error Comparison of the Methods")
 	plt.show()
 	fig.savefig("comparison.jpg", dpi=180)
 
